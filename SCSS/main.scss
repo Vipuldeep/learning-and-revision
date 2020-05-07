@@ -1,3 +1,22 @@
+@import './resets';
+@import './variables';
+
 body {
-    background: blue;
+    background: $primary-color;
+    color: $text-color;
+}
+
+.main {
+    width: 80%;
+    margin: 0 auto;
+
+    // interpolation  is # that includes evertything before __.
+
+    #{&}__paragraph {
+        font-weight: map-get($font-weight, bold );
+
+    &:hover {
+        color: pink;
+        }
+    }
 }
