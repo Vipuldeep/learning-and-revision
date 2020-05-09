@@ -1,7 +1,80 @@
 @import './resets';
 @import './variables';
 
+@function weight($weight-name) {
+        @return map-get($font-weight , $weight-name )
+}
+
+body, html {
+    height: 100%;
+}
+
 body {
-    background: $primary-color;
     color: $text-color;
+    font-family: $font-type;
+
+    #bg {
+        clip-path: polygon(100% 0, 100% 82%, 45% 100%, 0 100%, 0 0);
+        background-color: $primary-color;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        font-weight: normal;
+    }
+
+    header a {
+        color: $text-color;
+        text-decoration: none;
+        padding: $padding;
+        display: block;
+        text-decoration: uppercase;
+    }
+ 
+    main #card {
+       background: $text-color;
+       padding: 40px;
+       margin: 1em auto;
+       border-radius: $borders;
+       box-shadow: 0 10px 30px rgba(0,0,0,.2);
+       width: 80%;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+        li {
+            margin-bottom: 15px;
+            color: $primary-color;
+        }
+
+            span {
+                    position: absolute;
+                    width: 30px;
+                    height: 30px;
+                    background-color: lighten($primary-color, 40%);
+                    margin-right: 10px;
+                    border-radius: 50%;
+            }
+
+            p {
+                display: inline-block;
+                margin-left: max(40px);
+                margin-top: 5px;
+            }
+
+    section #primaryheading {
+        text-align: center;
+        padding: $padding;
+        font-size: 30px;
+        text-transform: uppercase;
+        margin-top: 10%;
+    }
+
+    // section #basicpara {
+    //         text-align: center;
+    //     }
 }
