@@ -74,7 +74,9 @@ body {
         margin-top: 10%;
     }
 
-    // section #basicpara {
-    //         text-align: center;
-    //     }
+        h4 {
+            text-align: center;
+            $font-weight: normal;
+            text-transform: uppercase;
+        }
 }
