@@ -13,6 +13,14 @@ body {
   font-family: "Montserrat";
 }
 
+@media (min-width: 840px) {
+  body {
+    display: grid;
+    grid-template-columns: 50% aut0;
+    grid-template-areas: "primary card";
+  }
+}
+
 body #bg {
   clip-path: polygon(100% 0, 100% 82%, 45% 100%, 0 100%, 0 0);
   background-color: #272727;
@@ -21,6 +29,12 @@ body #bg {
   position: absolute;
   z-index: -1;
   font-weight: normal;
+}
+
+@media (min-width: 840px) {
+  body #bg {
+    clip-path: polygon(0 0, 75% 0, 55% 100%, 0% 100%);
+  }
 }
 
 body header a {
@@ -39,6 +53,16 @@ body main #card {
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   width: 80%;
+}
+
+@media (min-width: 840px) {
+  body main #card {
+    grid-area: card;
+    height: fit-content;
+    align-self: center;
+    margin-top: 40%;
+    width: 100%;
+  }
 }
 
 body ul {
@@ -73,11 +97,22 @@ body section #primaryheading {
   font-size: 30px;
   text-transform: uppercase;
   margin-top: 4%;
+  color: #ff652f;
+}
+
+@media (min-width: 840px) {
+  body section #primaryheading {
+    grid-area: primary;
+    text-align: left;
+    float: left;
+    margin-left: 0%;
+  }
 }
 
 body h4 {
   text-align: center;
   text-transform: uppercase;
+  color: #ff652f;
 }
 
 body section a {
@@ -92,5 +127,7 @@ body section a {
   background-color: #fff;
   width: 40%;
   height: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 80%;
 }
 /*# sourceMappingURL=main.css.map */

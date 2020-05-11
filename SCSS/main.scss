@@ -1,6 +1,12 @@
 @import './resets';
 @import './variables';
 
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
 @function weight($weight-name) {
         @return map-get($font-weight , $weight-name )
 }
@@ -13,6 +19,12 @@ body {
     color: $text-color;
     font-family: $font-type;
 
+    @include desktop {
+        display: grid;
+        grid-template-columns: 50% aut0;
+        grid-template-areas: "primary card";
+    }
+
     #bg {
         clip-path: polygon(100% 0, 100% 82%, 45% 100%, 0 100%, 0 0);
         background-color: $primary-color;
@@ -21,6 +33,9 @@ body {
         position: absolute;
         z-index: -1;
         font-weight: normal;
+        @include desktop {
+            clip-path: polygon(0 0, 75% 0, 55% 100%, 0% 100%);
+        }
     }
 
     header a {
@@ -41,6 +56,14 @@ body {
        border-radius: $borders;
        box-shadow: 0 10px 30px rgba(0,0,0,.2);
        width: 80%;
+
+       @include desktop {
+           grid-area: card;
+           height: fit-content;
+           align-self: center;
+           margin-top: 40%;
+           width: 100%;
+       }
     }
 
     ul {
@@ -75,12 +98,21 @@ body {
         font-size: 30px;
         text-transform: uppercase;
         margin-top: 4%;
+        color: $accent-color;
+
+        @include desktop {
+            grid-area: primary;
+            text-align: left;
+            float: left;
+            margin-left: 0%;
+        }
     }
 
         h4 {
             text-align: center;
             $font-weight: normal;
             text-transform: uppercase;
+            color: $accent-color;
         }
 
         section a {
@@ -95,5 +127,8 @@ body {
             background-color: $text-color;
             width: 40%;
             height: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,.2);
+       width: 80%;
         }
 }
+
