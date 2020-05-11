@@ -26,9 +26,12 @@ body {
     header a {
         color: $text-color;
         text-decoration: none;
-        padding: $padding;
+        padding: $padding(max(40px));
+        font-size: 25px;
         display: block;
         text-decoration: uppercase;
+        $font-weight: bold;
+
     }
  
     main #card {
@@ -71,12 +74,26 @@ body {
         padding: $padding;
         font-size: 30px;
         text-transform: uppercase;
-        margin-top: 10%;
+        margin-top: 4%;
     }
 
         h4 {
             text-align: center;
             $font-weight: normal;
             text-transform: uppercase;
+        }
+
+        section a {
+            border-radius: $borders;
+            text-decoration: none;
+            color: $accent-color;
+            text-transform: uppercase;
+            display: block;
+            text-align: center;
+            margin: 25px auto 0 auto;
+            padding: $padding;
+            background-color: $text-color;
+            width: 40%;
+            height: 100%;
         }
 }

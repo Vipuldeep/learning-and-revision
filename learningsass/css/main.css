@@ -26,7 +26,8 @@ body #bg {
 body header a {
   color: #fff;
   text-decoration: none;
-  padding: 15px;
+  padding: 15px 40px;
+  font-size: 25px;
   display: block;
   text-decoration: uppercase;
 }
@@ -71,11 +72,25 @@ body section #primaryheading {
   padding: 15px;
   font-size: 30px;
   text-transform: uppercase;
-  margin-top: 10%;
+  margin-top: 4%;
 }
 
 body h4 {
   text-align: center;
   text-transform: uppercase;
+}
+
+body section a {
+  border-radius: 15px;
+  text-decoration: none;
+  color: #ff652f;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  margin: 25px auto 0 auto;
+  padding: 15px;
+  background-color: #fff;
+  width: 40%;
+  height: 100%;
 }
 /*# sourceMappingURL=main.css.map */
