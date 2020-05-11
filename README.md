@@ -1,4 +1,7 @@
 # learningsass
-trying out Sass crash course
+Learning the principles and components of Sass.
 
-checking this is a second branch
+Branch smallproject
+IDE USED: VS CODE
+Extension used: Sass realtime compiler
+GIT/GITHUB maintained.
