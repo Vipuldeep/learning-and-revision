@@ -19,12 +19,6 @@ body {
     color: $text-color;
     font-family: $font-type;
 
-    @include desktop {
-        display: grid;
-        grid-template-columns: 50% aut0;
-        grid-template-areas: "primary card";
-    }
-
     #bg {
         clip-path: polygon(100% 0, 100% 82%, 45% 100%, 0 100%, 0 0);
         background-color: $primary-color;
@@ -42,11 +36,63 @@ body {
         color: $text-color;
         text-decoration: none;
         padding: $padding(max(40px));
-        font-size: 25px;
+        font-size: 40px;
         display: block;
         text-decoration: uppercase;
         $font-weight: bold;
-
+    }
+    
+    /* title styles */
+    .home-title span{
+        position: relative;
+        overflow: hidden;
+        display: block;
+        line-height: 1.2;
+        text-align: left;
+    }
+    
+    .home-title span::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: $accent-color;
+        animation: a-ltr-after 2s cubic-bezier(.77,0,.18,1) forwards;
+        transform: translateX(-101%);
+    }
+    
+    .home-title span::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-color);
+        animation: a-ltr-before 2s cubic-bezier(.77,0,.18,1) forwards;
+        transform: translateX(0);
+    }
+    
+    .home-title span:nth-of-type(1)::before,
+    .home-title span:nth-of-type(1)::after{
+        animation-delay: 1s;
+    }
+    
+    .home-title span:nth-of-type(2)::before,
+    .home-title span:nth-of-type(2)::after{
+        animation-delay: 1.5s;
+    }
+    
+    @keyframes a-ltr-after{
+        0% {transform: translateX(-100%)}
+        100% {transform: translateX(101%)}
+    }
+    
+    @keyframes a-ltr-before{
+        0% {transform: translateX(0)}
+        100% {transform: translateX(200%)}
     }
  
     main #card {
@@ -56,14 +102,6 @@ body {
        border-radius: $borders;
        box-shadow: 0 10px 30px rgba(0,0,0,.2);
        width: 80%;
-
-       @include desktop {
-           grid-area: card;
-           height: fit-content;
-           align-self: center;
-           margin-top: 40%;
-           width: 100%;
-       }
     }
 
     ul {
@@ -76,15 +114,6 @@ body {
             margin-bottom: 15px;
             color: $primary-color;
         }
-
-            span {
-                    position: absolute;
-                    width: 30px;
-                    height: 30px;
-                    background-color: lighten($primary-color, 40%);
-                    margin-right: 10px;
-                    border-radius: 50%;
-            }
 
             p {
                 display: inline-block;
@@ -99,13 +128,6 @@ body {
         text-transform: uppercase;
         margin-top: 4%;
         color: $accent-color;
-
-        @include desktop {
-            grid-area: primary;
-            text-align: left;
-            float: left;
-            margin-left: 0%;
-        }
     }
 
         h4 {
